@@ -1,3 +1,6 @@
+// TODO
+// - Get hero background image to fill under header
+
 // STYLEGUIDE
 $col-primary: hsl(322, 100%, 66%)
 $col-neutral-dark: hsl(192, 100%, 9%)
@@ -32,17 +35,6 @@ p
 img
   max-width: 100%
 
-// HEADER
-header
-  width: 100%
-  display: flex
-  justify-content: space-between
-  align-items: center
-  padding: 23px 15px
-  background: $col-neutral-light
-header .logo
-  height: 16px
-
 // BUTTONS
 button
   border-radius: 100px
@@ -64,15 +56,85 @@ button
 .btn-lrg
   padding: 5px 25px
 
+// HEADER
+header
+  background: $col-neutral-light
+.header
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 25px 15px
+
+.header .logo
+  height: 16px
+
 section
   padding: 35px
+
+.width--outer
+  max-width: 1270px
+  margin: 0 auto
 
 // HERO
 .hero-section
   background: url("../../assets/bg-hero-mobile.svg") no-repeat $col-neutral-light
   background-size: cover
-
 .hero button
   margin-top: 20px
 .hero .image
   margin-top: 50px
+.h-block
+  display: block
+
+/*
+ * MAJOR BREAKPOINT
+ * Medium viewports, over 650px wide
+ */
+@media screen and (min-width: 650px)
+  .hero-section
+    background: url("../../assets/bg-hero-desktop.svg") no-repeat $col-neutral-light
+  .hero, .card
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 20px
+    align-items: center
+  .text
+    text-align: left
+
+// Minor breakpoint
+// Med-Lrg viewports, over 900px wide
+@media screen and (min-width: 900px)
+  .header
+    padding: 45px 35px 30px 35px
+  .header .logo
+    height: 26px
+  .btn-sml
+    padding: 17px 65px
+    font-size: 0.75em
+
+/*
+ * MAJOR BREAKPOINT
+ * Large viewports, over 1140px wide
+ */
+@media screen and (min-width: 1140px)
+  body
+    font-size: $font-base-size-lrg
+  h1
+    font-size: 2.2em
+  .header .logo
+    height: 32px
+  .btn-med
+    padding: 20px 70px
+  .hero, .card
+    grid-template-columns: 1fr 54%
+    grid-gap: 40px
+  .hero .image
+    margin-top: 0
+
+// Minor breakpoint
+// Adjustments for XL viewports, over 1260px wide
+@media screen and (min-width: 1370px)
+  .header
+    padding-left: 0
+    padding-right: 0
