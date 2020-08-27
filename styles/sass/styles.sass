@@ -9,4 +9,70 @@ $font-stack-body: 'Open Sans', Helvetica, sans-serif
 $font-weight-regular: 400
 $font-weight-bold: 700
 $font-weight-headings: 600
-$font-base-size: 18px
+$font-base-size-lrg: 18px
+$font-base-size-sml: 16px
+
+/*
+ * BASE LAYOUT
+ */
+*
+  box-sizing: border-box
+  font-family: $font-stack-body
+body
+  margin: 0
+  font-size: $font-base-size-sml
+  text-align: center
+  color: $col-neutral-dark
+h1, h2, h3, h4, h5, h6
+  font-family: $font-stack-headings
+h1
+  font-size: 1.5em
+p
+  line-height: 1.5
+img
+  max-width: 100%
+
+// HEADER
+header
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 23px 15px
+  background: $col-neutral-light
+header .logo
+  height: 16px
+
+// BUTTONS
+button
+  border-radius: 100px
+  border: none
+  font-size: 0.8em
+  font-weight: $font-weight-bold
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1)
+.btn-primary
+  background: $col-primary
+  color: white
+.btn-secondary
+  background: white
+  color: $col-neutral-dark
+.btn-sml
+  padding: 5px 20px
+  font-size: 0.6em
+.btn-med
+  padding: 12px 60px
+.btn-lrg
+  padding: 5px 25px
+
+section
+  padding: 35px
+
+// HERO
+.hero-section
+  background: url("../../assets/bg-hero-mobile.svg") no-repeat $col-neutral-light
+  background-size: cover
+
+.hero button
+  margin-top: 20px
+.hero .image
+  margin-top: 50px
