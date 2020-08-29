@@ -66,7 +66,7 @@ button
 .btn-med
   padding: 12px 60px
 .btn-lrg
-  padding: 5px 25px
+  padding: 12px 60px
 
 // HEADER
 header
@@ -116,6 +116,19 @@ section
   line-height: 1.6
   color: $col-neutral-medium
 
+// CALL TO ACTION
+.call-to-action
+  -moz-box-shadow: $card-shadow
+  -webkit-box-shadow: $card-shadow
+  box-shadow: $card-shadow
+  border-radius: 20px
+  margin: 12px
+  margin-top: 100px
+  padding: 40px 10px
+.call-to-action h2
+  font-size: 1.1em
+  margin: 20px 0
+
 
 /*
  * MAJOR BREAKPOINT
@@ -135,6 +148,12 @@ section
     grid-column: 1 / span 1
     grid-row: 1 / span 1
     max-width: 500px
+  .call-to-action
+    margin: 0 auto
+    max-width: 480px
+    margin-top: 150px
+  .call-to-action h2
+    font-size: 1.4em
 
 // Minor breakpoint
 // Med-Lrg viewports, over 900px wide
@@ -148,6 +167,16 @@ section
   .btn-sml
     padding: 17px 65px
     font-size: 0.75em
+  .call-to-action
+    max-width: 800px
+    margin: 0 auto
+    margin-top: 150px
+  .call-to-action h2
+    font-size: 1.9em
+    margin-bottom: 40px
+  .btn-lrg
+    padding: 28px 100px
+    font-size: 1.1em
 
 /*
  * MAJOR BREAKPOINT
@@ -160,7 +189,7 @@ section
     font-size: 2.2em
   .header .logo
     height: 32px
-  .btn-med
+  .btn-med, .btn-lrg
     padding: 20px 70px
   .hero
     grid-template-columns: 1fr 54%
