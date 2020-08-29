@@ -1,5 +1,10 @@
 // TODO
+// NEXT
+// - Card section mobile layout
+// - Card section responsive layout
+// BACKLOG
 // - Get hero background image to fill under header
+
 
 // STYLEGUIDE
 $col-primary: hsl(322, 100%, 66%)
@@ -15,6 +20,8 @@ $font-weight-headings: 600
 $font-base-size-lrg: 18px
 $font-base-size-sml: 16px
 
+$card-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1)
+
 /*
  * BASE LAYOUT
  */
@@ -28,8 +35,11 @@ body
   color: $col-neutral-dark
 h1, h2, h3, h4, h5, h6
   font-family: $font-stack-headings
+  font-weight: $font-weight-headings
 h1
   font-size: 1.5em
+h2
+  font-size: 1.25em
 p
   line-height: 1.5
 img
@@ -40,7 +50,9 @@ button
   border-radius: 100px
   border: none
   font-size: 0.8em
-  font-weight: $font-weight-bold
+  font-weight: $font-weight-headings
+  -moz-box-shadow: 0px 2px 8px rgba(0,0,0,0.1)
+  -webkit-box-shadow: 0px 2px 8px rgba(0,0,0,0.1)
   box-shadow: 0px 2px 8px rgba(0,0,0,0.1)
 .btn-primary
   background: $col-primary
@@ -65,13 +77,10 @@ header
   justify-content: space-between
   align-items: center
   padding: 25px 15px
-
 .header .logo
   height: 16px
-
 section
-  padding: 35px
-
+  padding: 20px
 .width--outer
   max-width: 1270px
   margin: 0 auto
@@ -80,12 +89,33 @@ section
 .hero-section
   background: url("../../assets/bg-hero-mobile.svg") no-repeat $col-neutral-light
   background-size: cover
+  padding: 35px
+  margin-bottom: 40px
+.hero
+  max-width: 1230px
+  margin: 0 auto
 .hero button
   margin-top: 20px
 .hero .image
   margin-top: 50px
 .h-block
   display: block
+
+// CARDS
+.card
+  -moz-box-shadow: $card-shadow
+  -webkit-box-shadow: $card-shadow
+  box-shadow: $card-shadow
+  padding: 45px 40px 20px 40px
+  border-radius: 20px
+  max-width: 1230px
+.card .image
+  padding: 15px 5px 30px 5px
+.card p
+  font-size: 0.85em
+  line-height: 1.6
+  color: $col-neutral-medium
+
 
 /*
  * MAJOR BREAKPOINT
@@ -101,10 +131,16 @@ section
     align-items: center
   .text
     text-align: left
+  main section:nth-of-type(2n - 1) .card .text
+    grid-column: 1 / span 1
+    grid-row: 1 / span 1
+    max-width: 500px
 
 // Minor breakpoint
 // Med-Lrg viewports, over 900px wide
 @media screen and (min-width: 900px)
+  h2
+    font-size: 1.4em
   .header
     padding: 45px 35px 30px 35px
   .header .logo
@@ -126,11 +162,24 @@ section
     height: 32px
   .btn-med
     padding: 20px 70px
-  .hero, .card
+  .hero
     grid-template-columns: 1fr 54%
+    grid-gap: 40px
+  .card
+    grid-template-columns: 1fr 45%
     grid-gap: 40px
   .hero .image
     margin-top: 0
+  .card
+    padding-left: 120px
+    text-align: center
+  .card .image
+    justify-self: start
+  .card .image img
+    max-width: 410px
+  .card p
+    font-size: 1em
+    line-height: 1.6
 
 // Minor breakpoint
 // Adjustments for XL viewports, over 1260px wide

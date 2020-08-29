@@ -14,10 +14,15 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: 600;
 }
 
 h1 {
   font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.25em;
 }
 
 p {
@@ -32,7 +37,9 @@ button {
   border-radius: 100px;
   border: none;
   font-size: 0.8em;
-  font-weight: 700;
+  font-weight: 600;
+  -moz-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -76,7 +83,7 @@ header {
 }
 
 section {
-  padding: 35px;
+  padding: 20px;
 }
 
 .width--outer {
@@ -87,6 +94,13 @@ section {
 .hero-section {
   background: url("../../assets/bg-hero-mobile.svg") no-repeat #ebfbff;
   background-size: cover;
+  padding: 35px;
+  margin-bottom: 40px;
+}
+
+.hero {
+  max-width: 1230px;
+  margin: 0 auto;
 }
 
 .hero button {
@@ -99,6 +113,25 @@ section {
 
 .h-block {
   display: block;
+}
+
+.card {
+  -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  padding: 45px 40px 20px 40px;
+  border-radius: 20px;
+  max-width: 1230px;
+}
+
+.card .image {
+  padding: 15px 5px 30px 5px;
+}
+
+.card p {
+  font-size: 0.85em;
+  line-height: 1.6;
+  color: #808d99;
 }
 
 /* * MAJOR BREAKPOINT
@@ -119,8 +152,18 @@ section {
   .text {
     text-align: left;
   }
+
+  main section:nth-of-type(2n - 1) .card .text {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+    max-width: 500px;
+  }
 }
 @media screen and (min-width: 900px) {
+  h2 {
+    font-size: 1.4em;
+  }
+
   .header {
     padding: 45px 35px 30px 35px;
   }
@@ -154,13 +197,36 @@ section {
     padding: 20px 70px;
   }
 
-  .hero, .card {
+  .hero {
     grid-template-columns: 1fr 54%;
+    grid-gap: 40px;
+  }
+
+  .card {
+    grid-template-columns: 1fr 45%;
     grid-gap: 40px;
   }
 
   .hero .image {
     margin-top: 0;
+  }
+
+  .card {
+    padding-left: 120px;
+    text-align: center;
+  }
+
+  .card .image {
+    justify-self: start;
+  }
+
+  .card .image img {
+    max-width: 410px;
+  }
+
+  .card p {
+    font-size: 1em;
+    line-height: 1.6;
   }
 }
 @media screen and (min-width: 1370px) {
