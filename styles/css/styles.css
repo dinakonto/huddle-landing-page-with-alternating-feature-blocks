@@ -81,7 +81,10 @@ button:focus {
 }
 
 header {
-  background: #ebfbff;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .header {
@@ -110,6 +113,8 @@ section {
   background-size: cover;
   padding: 35px;
   margin-bottom: 40px;
+  position: relative;
+  padding-top: 95px;
 }
 
 .hero {
@@ -415,6 +420,10 @@ p.icon-list::before {
 
   .header .logo {
     height: 32px;
+  }
+
+  .hero-section {
+    padding-top: 160px;
   }
 
   .btn-med, .btn-lrg {
