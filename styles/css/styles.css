@@ -112,9 +112,10 @@ section {
   background: url("../../assets/bg-hero-mobile.svg") no-repeat #ebfbff;
   background-size: cover;
   padding: 35px;
-  margin-bottom: 40px;
+  margin-bottom: 150px;
   position: relative;
   padding-top: 95px;
+  padding-bottom: 60px;
 }
 
 .hero {
@@ -193,6 +194,16 @@ footer .logo {
   height: 27px;
 }
 
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .contact, .sitemap, .social {
   padding: 0px 15px 10px 15px;
 }
@@ -228,16 +239,6 @@ p.icon-list::before {
 .sitemap ul li {
   margin-top: 15px;
   font-size: 1.1em;
-}
-
-.sitemap ul li a {
-  text-decoration: none;
-  color: white;
-}
-
-.sitemap ul li a:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 
 .social {
